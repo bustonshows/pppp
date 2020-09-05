@@ -14,7 +14,7 @@
     "cordova-plugin-media": "^2.2.0",
     "cordova-plugin-media-capture": "^1.2.0",
     "cordova-plugin-network-information": "~1.2.0",
-    "cordova-plugin-splashscreen": "https://github.com/apache/cordova-plugin-splashscreen.git",
+    "cordova-plugin-splashscreen": "git+https://github.com/apache/cordova-plugin-splashscreen.git",
     "cordova-plugin-statusbar": "~2.1.2",
     "cordova-plugin-vibration": "~2.1.0"
   },
@@ -48,5 +48,22 @@
   "dependencies": {
     "cordova-android": "^8.1.0",
     "cordova-plugin-file-transfer": "^1.7.1"
-  }
+  },
+  "name": "pppp",
+  "description": "A PhoneGap Hello World template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bustonshows/pppp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bustonshows/pppp/issues"
+  },
+  "homepage": "https://github.com/bustonshows/pppp#readme"
 }
