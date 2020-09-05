@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <!-- Mirrored from html.alfisahr.com/maleo/signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Nov 2019 15:28:48 GMT -->
+
+    <head>
+        <title>PvTB - Poverty-Tuberculosis</title>
+        <meta charset="utf-8">
+        <meta content="IE=edge" http-equiv="x-ua-compatible">
+        <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/responsive.css">
+        <link rel="shortcut icon" href="images/favicon.png">
+        <style>
+            select.browser-default{
+                color:#857070;
+               // font-size: 14px;
+                //font-weight: bold;
+            }
+            .margin-bottom_low{
+                padding-bottom: 20px;
+            }
+            .footer p{
+                margin: 0px;
+            }
+        .select2{
+            display: none;
+        }
+        </style>
+
+    <script type="text/javascript">
+        var url = window.location.pathname;
+        var filename = url.substring(url.lastIndexOf('/') + 1);
+        if (localStorage.login == "true" && filename == 'index.html') {
+            window.location.href = "dash.html";
+        }
+        else if (localStorage.login == "false" && filename != 'index.html') {
+            window.location.href = "index.html";
+        }
+
+        document.addEventListener("offline", offNotifyy, false);
+        document.addEventListener("online", onSendy, false);
+        function offNotifyy() {
+            document.getElementById("small-dialog5").innerHTML = "Please Connect Internet To View";
+        }
+        function onSendy() {
+            document.getElementById("small-dialog5").innerHTML = '<iframe src="https://player.vimeo.com/video/57866624" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+        }
+    </script>
+
+</head>
+
+<body>
+    <div id="main">
+        <div id="slide-out-left" class="side-nav">
+            <div class="side-cover">
+                <div class="overlay"></div>
+                <div class="cover-img"><img src="images/8.jpg" alt="" class=""></div>
+                <div class="prof-container">
+
+                    <div class="profile-name" style="text-align:center; padding-bottom: 30px">Poverty-Tuberculosis Screening</div>
+                </div>
+            </div>
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header"><i class="fa fa-home"></i>  <a href="index.html" style="color: black; font-weight: bold; text-decoration:none">Home</a> <span class="angle-right fa fa-angle-right"></span></div>
+
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="fa fa-info-circle"></i> <a style="color: black; font-weight: bold; text-decoration:none" href="about1.html" style="color: black;">About</a> <span class="angle-right fa fa-angle-right"></span></div>
+
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="fa fa-user-plus"></i> <a style="color: black; font-weight: bold; text-decoration:none" href="signup.html" style="color: black;">Create Account</a> <span class="angle-right fa fa-angle-right"></span></div>
+
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="fa fa-group"></i> <a style="color: black; font-weight: bold; text-decoration:none" href="#" style="color: black;">Add New Facility</a> <span class="angle-right fa fa-angle-right"></span></div>
+
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="fa fa-unlock-alt"></i> <a style="color: black; font-weight: bold; text-decoration:none" href="forgot.html" style="color: black;">Forgot Password</a> <span class="angle-right fa fa-angle-right"></span></div>
+
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="fa fa-user"></i> <a style="color: black; font-weight: bold; text-decoration:none" href="login.html" style="color: black;">Login</a> <span class="angle-right fa fa-angle-right"></span></div>
+
+                </li>
+
+        </div>
+    </div>
+    <div id="page">
+        <div class="top-navbar">
+            <div class="top-navbar-left"><a href="#" id="menu-left" data-activates="slide-out-left"><i class="fa fa-bars"></i></a></div>
+            <div class="top-navbar-right"></div>
+            <div class="site-title">
+                <img class="resize" src="images/logo.png"></div>
+        </div>
+        <div class="content-container">
+            <div class="maleo-card signup animated fadeInUp">
+                <h3 class="maleo-card_title big-title text-center">Add Facility</h3>
+                <div class="form-content">
+                    <p class="app-desc">Please fill the required fields.</p>
+                    <div >
+                        
+                        
+                        <div class="input-field with-icon margin-bottom">
+                        <div class="margin-bottom_low"><span class="icon" style="float:left;top: -5px"></span><span style="float:left; font-size: 1rem; color: #9e9e9e;">State</span></div>
+                        <select  name="state" id="state" class="browser-default">
+                                <option value="" selected="selected" >- Select -</option>
+                                <option value='Abia'>Abia</option>
+                                <option value='Adamawa'>Adamawa</option>
+                                <option value='AkwaIbom'>AkwaIbom</option>
+                                <option value='Anambra'>Anambra</option>
+                                <option value='Bauchi'>Bauchi</option>
+                                <option value='Bayelsa'>Bayelsa</option>
+                                <option value='Benue'>Benue</option>
+                                <option value='Borno'>Borno</option>
+                                <option value='Cross River'>Cross River</option>
+                                <option value='Delta'>Delta</option>
+                                <option value='Ebonyi'>Ebonyi</option>
+                                <option value='Edo'>Edo</option>
+                                <option value='Ekiti'>Ekiti</option>
+                                <option value='Enugu'>Enugu</option>
+                                <option value='FCT'>FCT</option>
+                                <option value='Gombe'>Gombe</option>
+                                <option value='Imo'>Imo</option>
+                                <option value='Jigawa'>Jigawa</option>
+                                <option value='Kaduna'>Kaduna</option>
+                                <option value='Kano'>Kano</option>
+                                <option value='Katsina'>Katsina</option>
+                                <option value='Kebbi'>Kebbi</option>
+                                <option value='Kogi'>Kogi</option>
+                                <option value='Kwara'>Kwara</option>
+                                <option value='Lagos'>Lagos</option>
+                                <option value='Nasarawa'>Nasarawa</option>
+                                <option value='Niger'>Niger</option>
+                                <option value='Ogun'>Ogun</option>
+                                <option value='Ondo'>Ondo</option>
+                                <option value='Osun'>Osun</option>
+                                <option value='Oyo'>Oyo</option>
+                                <option value='Plateau'>Plateau</option>
+                                <option value='Rivers'>Rivers</option>
+                                <option value='Sokoto'>Sokoto</option>
+                                <option value='Taraba'>Taraba</option>
+                                <option value='Yobe'>Yobe</option>
+                                <option value='Zamfara'>Zamafara</option>
+                         
+                        </select>
+                    </div>
+
+                       <div class="input-field with-icon margin-bottom">
+                            <div class="margin-bottom_low"><span class="icon" style="float:left;top: -5px"></span><span style="float:left; font-size: 1rem; color: #9e9e9e;">LGA</span></div>
+                        
+                            <select name="lga" id="lga" >
+                            </select>
+                       </div>
+                        </div>
+                        <div class="input-field with-icon margin-bottom">
+                        <div class="margin-bottom_low"><span class="icon" style="float:left;top: -5px"></span><span style="float:left; font-size: 1rem; color: #9e9e9e;">Facility Type</span></div>
+                        <select  name="type" id="type" class="browser-default">
+                            <option value="" selected="selected" >- Select -</option>
+                            <option value='outreach'>Outreach</option>
+                            <option value='hp'>Health Post</option>
+                            <option value='ppmv'>PPMV</option>
+                            <option value='cp'>Community Pharmacy</option>
+                            <option value='phc'>Primary Healthcare Centre</option>
+                            <option value='tba'>Traditional Birth Attendant</option>
+                            <option value='th'>Traditional Healers</option>
+                            <option value='ph'>Private Hospital</option>
+                            <option value='fbo'>Faith Based Organization</option>
+                            <option value='pp'>Private For Profit</option>
+                            <option value='co'>Cough Officer</option>
+                            <option value='ctw'>Community TB Workers</option>
+                            <option value='others'>Others</option>
+                        </select>
+                    </div>
+                        
+
+                        <label class="item-input">
+                            <span class="input-label">Facility Name</span>
+                            <input type="text" placeholder="TheBuston Clinic" id="name">
+                        </label>
+                        <label class="item-input">
+                            <span class="input-label">Facility Phone</span>
+                            <input type="text" placeholder="080xxxxxxxx" id="phone" maxlength="11">
+                        </label>
+                        <label class="item-input">
+                            <span class="input-label">Facility Email</span>
+                            <input type="email" placeholder="email@domain.com" id="email">
+                        </label>
+                        <label class="item-input">
+                            <span class="input-label"> Address</span>
+                            <input type="text" name="address" placeholder="1, Balogun-kuku street" id="address" >
+                        </label>
+                        
+                    <div class="input-field with-icon margin-bottom">
+                            <div class="margin-bottom_low"><span class="icon" style="float:left;top: -5px"></span><span style="float:left; font-size: 1rem; color: #9e9e9e;">Programme</span></div>
+                        <span id="getprogs"></span>
+                       </div>
+
+                        <label class="item-input">
+                            <button class="btn-large block margin-bottom" id="addfacility">Request To Add Facility</button>
+                        </label>
+
+
+                    </div>
+                    
+            </div>
+            
+            
+           
+
+        </div>
+    </div>
+
+<div class="footer">
+    <img src="images/logo.png"  class="resize" />
+    <p>PvTB - "Poverty-Tuberculosis Screening"</p>
+    <div class="social-footer"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a><a href="#" class="gplus"><i class="fa fa-google-plus"></i></a></div>
+    <div class="copyright">&copy; 2019 by PharmAccess</div>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript"  src="js/select2.min.js"></script>
+        <script type="text/javascript"  src="js/lga.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+<script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+<script type="text/javascript" src="js/slick.min.js"></script>
+<script type="text/javascript" src="js/jquery.swipebox.min.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+<script type="text/javascript" src="cordova.js"></script>
+<!--<script type="text/javascript" src="js/jq.js"></script>-->
+<script type="text/javascript" src="js/auth.js"></script>
+<script type="text/javascript">
+                            $(document).ready(function () {
+                                $('.customer-logos').slick({
+                                    slidesToShow: 6,
+                                    slidesToScroll: 1,
+                                    autoplay: true,
+                                    autoplaySpeed: 1000,
+                                    arrows: false,
+                                    dots: false,
+                                    pauseOnHover: false,
+                                    responsive: [{
+                                            breakpoint: 768,
+                                            settings: {
+                                                slidesToShow: 4
+                                            }
+                                        }, {
+                                            breakpoint: 520,
+                                            settings: {
+                                                slidesToShow: 3
+                                            }
+                                        }]
+                                });
+                            });
+</script>
+<script>
+    if ($(window).height() > $("body").height()) {
+        $("footer").css("position", "fixed");
+    } else {
+        $("footer").css("position", "static");
+    }
+
+    $.ajax({
+        url: "https://geoip-db.com/jsonp",
+        jsonpCallback: "callback",
+        dataType: "jsonp",
+        success: function (location) {
+            var x = document.getElementById("state");
+            var option = document.createElement("option");
+            option.text = location.state;
+            x.add(option);
+        }
+    });
+
+    function facs() {
+        var url = "https://pvtb.com.ng/pharm/auth_new.php?callback=?";
+        var state = $("#state").val();
+        var lga = $("#lga").val();
+        var dataString = "lga=" + lga + "&state=" + state + "&lgaloadd=";
+
+        if ($.trim(state) == '') {
+            alert("Please Select State");
+            return false;
+        } else if ($.trim(lga) == '') {
+            alert("Please Select LGA");
+            return false;
+        }
+
+        if ($.trim(state).length > 0 & $.trim(lga).length > 0)
+        {
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: dataString,
+                crossDomain: true,
+                cache: false,
+                beforeSend: function () {
+                    $("#faccc").html('<button class="button button-block button-positive">Loading Available Facilities...</button>');
+                },
+                success: function (datay) {
+                   // alert(datay);
+                    var dp = datay;
+                    //document.getElementById("faccc").innerHTML = dp;
+                    $("#faccc").html(dp);
+                }
+            });
+        }
+        return false;
+    }
+</script>
+</body>
+<!-- Mirrored from html.alfisahr.com/maleo/signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Nov 2019 15:28:48 GMT -->
+
+</html>

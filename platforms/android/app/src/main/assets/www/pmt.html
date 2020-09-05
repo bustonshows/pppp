@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <!-- Mirrored from html.alfisahr.com/maleo/signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Nov 2019 15:28:48 GMT -->
+
+    <head>
+        <title>PvTB - Poverty-Tuberculosis</title>
+        <meta charset="utf-8">
+        <meta content="IE=edge" http-equiv="x-ua-compatible">
+        <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/responsive.css">
+        <link rel="shortcut icon" href="images/favicon.png">
+        <style>
+            select.browser-default{
+                color:#857070;
+                // font-size: 14px;
+                //font-weight: bold;
+            }
+            .margin-bottom_low{
+                padding-bottom: 20px;
+            }
+            .footer p{
+                margin: 0px;
+            }
+            .select2{
+                display: none;
+            }
+        </style>
+
+        <script type="text/javascript">
+
+            if (localStorage.login != "true") {
+                window.location.href = "index.html";
+            }
+
+            var url = window.location.pathname;
+            var filename = url.substring(url.lastIndexOf('/') + 1);
+            if (localStorage.login == "true" && filename == 'login.html') {
+                window.location.href = "index.html";
+            }
+            else if (localStorage.login == "false" && filename != 'login.html') {
+                window.location.href = "login.html";
+            }
+
+            document.addEventListener("offline", offNotifyy, false);
+            document.addEventListener("online", onSendy, false);
+            function offNotifyy() {
+                document.getElementById("small-dialog5").innerHTML = "Please Connect Internet To View";
+            }
+            function onSendy() {
+                document.getElementById("small-dialog5").innerHTML = '<iframe src="https://player.vimeo.com/video/57866624" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+            }
+        </script>
+
+    </head>
+
+    <body>
+        <div id="main">
+            <div id="slide-out-left" class="side-nav">
+                <div class="side-cover">
+                    <div class="overlay"></div>
+                    <div class="cover-img"><img src="images/8.jpg" alt=""></div>
+                    <div class="prof-container">
+                        <div class="avatar" id="myImgg"></div>
+                        <div class="profile-name" id="nnam2" style="padding-bottom: 30px;float: inherit;padding-left: 80px;"></div>
+                    </div>
+                </div>
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header  current-item"><i class="fa fa-dashboard"></i> <a href="dash.html" style="text-decoration: none; color: inherit"> Dashboard </a> <span class="angle-right fa fa-angle-right"></span></div>
+
+                    </li>
+                    
+                    <li>
+                        <div class="collapsible-header current-item"><i class="fa fa-search-plus"></i> <a href="screen.html" style="text-decoration: none; color: inherit"> Screening </a> <span class="fa fa-angle-right"></span></div>
+
+                    </li>
+                    <li>
+                        <div style="font-weight: bold;" class="collapsible-header"><i class="fa fa-calendar-check-o"></i> <a href="task.html" style="text-decoration: none; color: inherit"> My Tasks </a> <span class="angle-right fa fa-angle-right"></span></div>
+                    </li>
+                    <li>
+                        <div  class="collapsible-header current-item"><i class="fa fa-envelope-o"></i><a href="pending.html" style="text-decoration: none; color: inherit">  Pending </a> <span class="angle-right fa fa-angle-right"></span></div>
+
+                    </li>
+                    <li>
+                        <div style="font-weight: bold;" class="collapsible-header"><i class="fa fa-unlock-alt"></i> <a href="change-password.html" style="text-decoration: none; color: inherit"> Password </a><span class="angle-right fa fa-angle-right"></span></div>
+
+                    </li>
+                    <li>
+                        <div class="collapsible-header current-item"><i class="fa fa-power-off"></i> <a style="text-decoration: none; color: inherit" id="logoutt" href="#logoutt">Logout</a> <span class="angle-right fa fa-angle-right"></span></div>
+
+                    </li>
+
+                    <li>
+                        <div class="line-separator"></div>
+                    </li>
+                    <li class="heading-menu">More On PvTB</li>
+                    <li><a href="about.html"><i class="fa fa-file"></i> About </a></li>
+                    <li><a href="contact.html"><i class="fa fa-map-pin"></i> Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="page">
+            <div class="top-navbar">
+                <div class="top-navbar-left"><a href="#" id="menu-left" data-activates="slide-out-left"><i class="fa fa-bars"></i></a></div>
+                <div class="top-navbar-right"></div>
+                <div class="site-title">
+                    <img class="resize" src="images/logo.png"></div>
+            </div>
+            <div class="content-container">
+                <div class="maleo-card signup animated fadeInUp">
+                    <h3 class="maleo-card_title big-title text-center">Poverty Screening</h3>
+                    <div class="form-content">
+                        <p class="app-desc" style="margin: 5px;">Please fill the fields.</p>
+
+                        <form class="form-horizontal">
+                            <div class="box box-info">
+                                <!-- /.box-header -->
+                                <!-- form start -->
+                                <div class="box-body">
+
+                                    <fieldset>
+                                        <legend>General Household Questions</legend>
+                                        <div class="input-field with-icon margin-bottom">
+                                            <div class="margin-bottom_low"><span class="icon" style="float:left;top: -5px"><i class="fa fa-map-pin"></i></span><span style="padding-left: 20px; text-align: justify; float:left; font-size: 1rem; color: firebrick; font-weight: bold;">1 - Does your household share toilet facilities with another household?</span></div>
+                                            <select name="one" id="one" class="browser-default" style="" onchange="showone(this.value)">
+                                                <option value=''>Select Option</option>
+                                                <option value='1'>Yes</option>
+                                                <option value='0'>No</option>
+                                            </select>
+                                            <input  type="hidden" class="form-control" id="wardid1">
+                                        </div>
+                                        <div class="input-field with-icon margin-bottom"  style='display: none;' id="oneonebox">
+                                            <div class="margin-bottom_low"><span class="icon" style="float:left;top: -5px"><i class="fa fa-map-pin"></i></span><span style="padding-left: 20px; text-align: justify; float:left; font-size: 1rem; color: firebrick; font-weight: bold;">1(ii) - What type of toilet does your household use?</span></div>
+                                            <div class="col-sm-10">
+                                                <select name="oneone" id="oneone" class="browser-default" style="">
+                                                    <option value=''>Select Option</option>
+                                                    <option value='1'>Open Field</option>
+                                                    <option value='1'>Bucket or Pail</option>
+                                                    <option value='1'>Uncovered Pit Latrine</option>
+                                                    <option value='0'>VIP Latrine</option>
+                                                    <option value='0'>Covered Pit Latrine</option>
+                                                    <option value='0'>Toilet-on-water</option>
+                                                    <option value='0'>Flush to Septic Tank or Sewer</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="input-field with-icon margin-bottom" style=''>
+                                            <div class="margin-bottom_low"><span class="icon" style="float:left;top: -5px"><i class="fa fa-map-pin"></i></span><span style="padding-left: 20px; text-align: justify; float:left; font-size: 1rem; color: firebrick; font-weight: bold;">2 - What kind of cooking fuel do you use?</span></div>
+                                            <div class="col-sm-10">
+                                                <select name="two" id="two" class="browser-default" style="">
+                                                    <option value=''>Select Option</option>
+                                                    <option value='1'>Dung</option>
+                                                    <option value='1'>Firewood</option>
+                                                    <option value='1'>Charcoal</option>
+                                                    <option value='0'>Kerosene</option>
+                                                    <option value='0'>Gas</option>
+                                                    <option value='0'>Electricity</option>
+                                                    <option value='0'>Microwave</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="input-field with-icon margin-bottom" style=''>
+                                            <div class="margin-bottom_low"><span class="icon" style="float:left;top: -5px"><i class="fa fa-map-pin"></i></span><span style="padding-left: 20px; text-align: justify; float:left; font-size: 1rem; color: firebrick; font-weight: bold;">3 - Does anyone in the household own a car?</span></div>
+                                            <div class="col-sm-10">
+                                                <select name="three" id="three" class="browser-default" style="" onchange="showthree(this.value)">
+                                                    <option value=''>Select Option</option>
+                                                    <option value='0'>Yes</option>
+                                                    <option value='1'>No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-field with-icon margin-bottom" style='display: none;' id="threeonebox">
+                                            <div class="margin-bottom_low"><span class="icon" style="float:left;top: -5px"><i class="fa fa-map-pin"></i></span><span style="padding-left: 20px; text-align: justify; float:left; font-size: 1rem; color: firebrick; font-weight: bold;">3(ii) - Does anyone in the household own a motorbike?</span></div>
+                                            <div class="col-sm-10">
+                                                <select name="threeone" id="threeone" class="browser-default" style="">
+                                                    <option value=''>Select Option</option>
+                                                    <option value='0'>Yes</option>
+                                                    <option value='1'>No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-field with-icon margin-bottom" style='display: none;' id="threetwobox">
+                                            <div class="margin-bottom_low"><span class="icon" style="float:left;top: -5px"><i class="fa fa-map-pin"></i></span><span style="padding-left: 20px; text-align: justify; float:left; font-size: 1rem; color: firebrick; font-weight: bold;">3(iii) - How many mobile phones does the household own?</span></div>
+                                            <div class="col-sm-10">
+                                                <select name="threetwo" id="threetwo" class="browser-default" style="">
+                                                    <option value=''>Select Option</option>
+                                                    <option value='1'>None</option>
+                                                    <option value='0'>One phone</option>
+                                                    <option value='0'>Two phones</option>
+                                                    <option value='0'>Three or more phones</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-field with-icon margin-bottom" style='display: none;' id="threethreebox">
+                                            <div class="margin-bottom_low"><span class="icon" style="float:left;top: -5px"><i class="fa fa-map-pin"></i></span><span style="padding-left: 20px; text-align: justify; float:left; font-size: 1rem; color: firebrick; font-weight: bold;">3(iv) - Does the household own a television set?</span></div>
+                                            <div class="col-sm-10">
+                                                <select name="threethree" id="threethree" class="browser-default" style="">
+                                                    <option value=''>Select Option</option>
+                                                    <option value='0'>Yes</option>
+                                                    <option value='1'>No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-field with-icon margin-bottom" style='display: none;' id="threefourbox">
+                                            <div class="margin-bottom_low"><span class="icon" style="float:left;top: -5px"><i class="fa fa-map-pin"></i></span><span style="padding-left: 20px; text-align: justify; float:left; font-size: 1rem; color: firebrick; font-weight: bold;">3(v) - Does the household own a radio?</span></div>
+                                            <div class="col-sm-10">
+                                                <select name="threefour" id="threefour" class="browser-default" style="">
+                                                    <option value=''>Select Option</option>
+                                                    <option value='0'>Yes</option>
+                                                    <option value='1'>No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-field with-icon margin-bottom" style='display: none;' id="threefivebox">
+                                            <div class="margin-bottom_low"><span class="icon" style="float:left;top: -5px"><i class="fa fa-map-pin"></i></span><span style="padding-left: 20px; text-align: justify; float:left; font-size: 1rem; color: firebrick; font-weight: bold;">3(vi) - Does the household own a bicycle?</span></div>
+                                            <div class="col-sm-10">
+                                                <select name="threefive" id="threefive" class="browser-default" style="">
+                                                    <option value=''>Select Option</option>
+                                                    <option value='0'>Yes</option>
+                                                    <option value='1'>No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-field with-icon margin-bottom" style='display: none;' id="threesixbox">
+                                            <div class="margin-bottom_low"><span class="icon" style="float:left;top: -5px"><i class="fa fa-map-pin"></i></span><span style="padding-left: 20px; text-align: justify; float:left; font-size: 1rem; color: firebrick; font-weight: bold;">3(vii) - Does the household own a fridge?</span></div>
+                                            <div class="col-sm-10">
+                                                <select name="threesix" id="threesix" class="browser-default" style="">
+                                                    <option value=''>Select Option</option>
+                                                    <option value='0'>Yes</option>
+                                                    <option value='1'>No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-field with-icon margin-bottom" style=''>
+                                            <div class="margin-bottom_low"><span class="icon" style="float:left;top: -5px"><i class="fa fa-map-pin"></i></span><span style="padding-left: 20px; text-align: justify; float:left; font-size: 1rem; color: firebrick; font-weight: bold;">4 - What is the type of floor in your house?</span></div>
+                                            <div class="col-sm-10">
+                                                <select name="four" id="four" class="browser-default" style="">
+                                                    <option value=''>Select Option</option>
+                                                    <option value='1'>Dung</option>
+                                                    <option value='1'>Grass</option>
+                                                    <option value='1'>Sand</option>
+                                                    <option value='0'>Tiles</option>
+                                                    <option value='0'>Cement</option>
+                                                    <option value='0'>Wood</option>
+                                                    <option value='0'>Carpet</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-field with-icon margin-bottom" style=''>
+                                            <div class="margin-bottom_low"><span class="icon" style="float:left;top: -5px"><i class="fa fa-map-pin"></i></span><span style="padding-left: 20px; text-align: justify; float:left; font-size: 1rem; color: firebrick; font-weight: bold;">5 - What is the source of your electricity in your household?</span></div>
+                                            <div class="col-sm-10">
+                                                <select name="five" id="five" class="browser-default" style="">
+                                                    <option value=''>Select Option</option>
+                                                    <option value='1'>No Electricity</option>
+                                                    <option value='0'>Fuel Generator</option>
+                                                    <option value='0'>Public Grid</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-field with-icon margin-bottom" style=''>
+                                            <div class="margin-bottom_low"><span class="icon" style="float:left;top: -5px"><i class="fa fa-map-pin"></i></span><span style="padding-left: 20px; text-align: justify; float:left; font-size: 1rem; color: firebrick; font-weight: bold;">6 - What is the household's source of water?</span></div>
+                                            <div class="col-sm-10">
+                                                <select name="six" id="six" class="browser-default" style="">
+                                                    <option value=''>Select Option</option>
+                                                    <option value='1'>Surface Water - Streams, Rivers, etc</option>
+                                                    <option value='1'>Unprotected Spring  or Dug Well</option>
+                                                    <option value='1'>Water Pushers or Water Tankers</option>
+                                                    <option value='0'>Protected Dug Well</option>
+                                                    <option value='0'>Borehole</option>
+                                                    <option value='0'>Piped Water into Compound/Public Tap</option>
+                                                    <option value='0'>Piped Water into House</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="input-field with-icon margin-bottom" style=''>
+                                            <div class="margin-bottom_low"><span class="icon" style="float:left;top: -5px"><i class="fa fa-map-pin"></i></span><span style="padding-left: 20px; text-align: justify; float:left; font-size: 1rem; color: firebrick; font-weight: bold;">7 - Has any child less than 15 years old died within the last 5 years?</span></div>
+                                            <div class="col-sm-10">
+                                                <select name="seven" id="seven" class="browser-default" style="">
+                                                    <option value=''>Select Option</option>
+                                                    <option value='1'>Yes</option>
+                                                    <option value='0'>No</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="box-body">
+                                    <fieldset>
+                                        <legend>Household Head Count</legend>
+                                        <div class="input-field with-icon margin-bottom"><span class="icon"><i class="fa fa-home" style="padding-right: 20px"></i></span>
+                                            <input id="headcount" type="text">
+                                            <input id="loc" type="hidden">
+                                            <label for="headcount" style="color:firebrick">1 - How many members does the household have?</label>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+
+                        </form>
+                        <button class="btn-large block margin-bottom" onclick="finishpmt()" type="button" id="nextscreen">Next</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <h2 class="heading">PvTB</h2>
+            <p>Poverty-Tuberculosis Screening Tool</p>
+            <div class="social-footer"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a><a href="#" class="gplus"><i class="fa fa-google-plus"></i></a></div>
+            <div class="copyright">&copy; 2019 by PharmAccess</div>
+        </div>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+        <script type="text/javascript" src="js/slick.min.js"></script>
+        <script type="text/javascript" src="js/jquery.swipebox.min.js"></script>
+        <script type="text/javascript" src="js/custom.js"></script>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <!--<script type="text/javascript" src="js/jq.js"></script>-->
+        <script type="text/javascript" src="js/auth.js"></script>
+
+        <script> document.getElementById("nnam").innerHTML = ' ' + localStorage.healthname.toUpperCase();</script>
+        <script> document.getElementById("nnam2").innerHTML = ' ' + localStorage.healthname;</script>
+        <script> document.getElementById("nhos").innerHTML = localStorage.facilityname;</script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('.customer-logos').slick({
+                    slidesToShow: 6,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 1000,
+                    arrows: false,
+                    dots: false,
+                    pauseOnHover: false,
+                    responsive: [{
+                            breakpoint: 768,
+                            settings: {
+                                slidesToShow: 4
+                            }
+                        }, {
+                            breakpoint: 520,
+                            settings: {
+                                slidesToShow: 3
+                            }
+                        }]
+                });
+            });
+        </script>
+        <script>
+            if ($(window).height() > $("body").height()) {
+                $("footer").css("position", "fixed");
+            } else {
+                $("footer").css("position", "static");
+            }
+
+            if ($.trim(localStorage.pix) != '') {
+                document.getElementById("myImgg").innerHTML = '<img onclick="openCamera()" id="myImg" class="img-circle border-effect" src="https://pvtb.com.ng/pharm/upload/' + localStorage.pix + '" alt=" ">';
+            }
+
+            var ddt = new Date();
+            localStorage.tbstatus = "";
+            localStorage.screenassid = localStorage.regid;
+            localStorage.screendate = ddt.getTime();
+        </script>
+        <script>
+
+            function finishpmt() {
+                var one = document.getElementById("one").value;
+                var two = document.getElementById("two").value;
+                var three = document.getElementById("three").value;
+                var four = document.getElementById("four").value;
+                var five = document.getElementById("five").value;
+                var six = document.getElementById("six").value;
+                var seven = document.getElementById("seven").value;
+
+                var oneone = document.getElementById("oneone").value;
+                var threeone = document.getElementById("threeone").value;
+                var threetwo = document.getElementById("threetwo").value;
+                var threethree = document.getElementById("threethree").value;
+                var threefour = document.getElementById("threefour").value;
+                var threefive = document.getElementById("threefive").value;
+                var threesix = document.getElementById("threesix").value;
+                var headcount = document.getElementById("headcount").value;
+                var headcount2 = document.getElementById("headcount").value;
+
+                //alert(headcount);
+                if ($.trim(one) == '0' || $.trim(one) == '1') {
+                    if ($.trim(oneone) == '') {
+                        alert('Question One(ii) has not been answered');
+                        return false;
+                    }
+                }
+                if ($.trim(three) == '1') {
+                    if ($.trim(threeone) == '') {
+                        alert('Question Three(ii) has not been answered');
+                        return false;
+                    }
+                    if ($.trim(threetwo) == '') {
+                        alert('Question Three(iii) has not been answered');
+                        return false;
+                    }
+                    if ($.trim(threethree) == '') {
+                        alert('Question Three(iv) has not been answered');
+                        return false;
+                    }
+                    if ($.trim(threefour) == '') {
+                        alert('Question Three(v) has not been answered');
+                        return false;
+                    }
+                    if ($.trim(threefive) == '') {
+                        alert('Question Three(vi) has not been answered');
+                        return false;
+                    }
+                    if ($.trim(threesix) == '') {
+                        alert('Question Three(vii) has not been answered');
+                        return false;
+                    }
+                }
+
+                if ($.trim(five) == '') {
+                    alert('Question Five has not been answered');
+                    return false;
+                } else if ($.trim(two) == '') {
+                    alert('Question Two has not been answered');
+                    return false;
+                } else if ($.trim(three) == '') {
+                    alert('Question Three has not been answered');
+                    return false;
+                } else if ($.trim(four) == '') {
+                    alert('Question Four has not been answered');
+                    return false;
+                } else if ($.trim(five) == '') {
+                    alert('Question Five has not been answered');
+                    return false;
+                } else if ($.trim(six) == '') {
+                    alert('Question Six has not been answered');
+                    return false;
+                } else if ($.trim(seven) == '') {
+                    alert('Question seven has not been answered');
+                    return false;
+                } else if ($.trim(headcount) == '') {
+                    alert('Question Household Head Count has not been answered');
+                    return false;
+                } else {
+                    alert("Are you sure you want to proceed?")
+                    var mpiscore = parseFloat(getmpiscore('one', processfivempi(one))) + parseFloat(getmpiscore('two', getmppiscore(two, 'mpi'))) + parseFloat(getmpiscore('three', processseven(three))) + parseFloat(getmpiscore('four', getmppiscore(four, 'mpi'))) + parseFloat(getmpiscore('five', getmppiscore(five, 'mpi'))) + parseFloat(getmpiscore('six', getmppiscore(six, 'mpi'))) + parseFloat(getmpiscore('seven', getmppiscore(seven, 'mpi')));
+                    //alert(mpiscore);
+                    var agent = localStorage.screenassid;
+                    var ward = localStorage.screenward;
+                    var state = localStorage.screenstate;
+                    var commpass = localStorage.commpass;
+                    var screen = '1';
+                    var lga = localStorage.screenlga;
+                    var loc = localStorage.screenlonglat;
+                    var datescreened = localStorage.screendate;
+                    var comm = localStorage.screencomm;
+                    var hcount = datescreened;
+                    var threshold = '0.26';
+                    localStorage.mpiscore = mpiscore;
+                    // localStorage.hhlinkid = localStorage.hcount;//nowTimeStamp + localStorage.sid;
+                    // var offlineid = localStorage.hhlinkid;
+                    //alert(state+lga+ward);
+
+                    var url = "https://pvtb.com.ng/pharm/auth_new.php?callback=?";
+                    var scoredata = '"one":"' + one + '","oneone":"' + oneone + '","two":"' + two + '","three":"' + three + '","threeone":"' + threeone + '","threetwo":"' + threetwo + '","threethree":"' + threethree + '","threefour":"' + threefour + '","threefive":"' + threefive + '","threesix":"' + threesix + '","four":"' + four + '","five":"' + five + '","six":"' + six + '","seven":"' + seven + '","headcount":"' + headcount + '"';
+                    var jsonData = '"mpiscore":"' + mpiscore + '","screen":"' + screen + '","hcount":"' + hcount + '","loc":"' + loc + '","comm":"' + comm + '","start_date":"' + datescreened + '","headcount":"' + headcount + '","state":"' + state + '","lga":"' + lga + '","ward":"' + ward  + '","commpass":"' + commpass + '","scoredata":"' + scoredata + '","agent":"' + agent;
+                    var jsonData2 = '"offagent":"' + agent + '","offscreen":"' + screen + '","hcount":"' + hcount + '","offlineid":"' + hcount + '","loc":"' + loc + '","comm":"' + comm + '","offdatescreened":"' + datescreened + '","headcount":"' + headcount + '","state":"' + state + '","lga":"' + lga + '","ward":"' + ward  + '","commpass":"' + commpass + '","scoredata":"' + scoredata + '","agent":"' + agent + '","commtext":"' + 'true' + '"';
+                    var dataString = "mpiscore=" + mpiscore + "&screen=" + screen + "&hcount=" + hcount + "&loc=" + loc + "&comm=" + comm + "&start_date=" + datescreened + "&headcount=" + headcount2 + "&state=" + state + "&lga=" + lga + "&ward=" + ward  + "&commpass=" + commpass + "&scoredata=" + scoredata + "&agent=" + agent + "&pushscreenpmt=";
+                    //alert(score + " 1 " + agent  + " 2 " +  threshold  + " 3 " + screen  + " 4 " + hcount  + " 5 " +  commid  + " 6 " +  datescreened);
+                    if ($.trim(scoredata) == '' || $.trim(agent) == '' || $.trim(screen) == '' || $.trim(hcount) == '' || $.trim(comm) == '' || $.trim(datescreened) == '') {
+                        alert("Application Screening Error! Please Re-login To Fix This Error");
+                        window.location.href = "login.html";
+                        return false;
+                    }
+
+                    document.getElementById("one").setAttribute("readonly", true);
+                    document.getElementById("two").setAttribute("readonly", true);
+                    document.getElementById("three").setAttribute("readonly", true);
+                    document.getElementById("four").setAttribute("readonly", true);
+                    document.getElementById("five").setAttribute("readonly", true);
+                    document.getElementById("six").setAttribute("readonly", true);
+                    document.getElementById("seven").setAttribute("readonly", true);
+                    document.getElementById("headcount").setAttribute("readonly", true);
+                    document.getElementById("oneone").setAttribute("readonly", true);
+                    document.getElementById("threeone").setAttribute("readonly", true);
+                    document.getElementById("threetwo").setAttribute("readonly", true);
+                    document.getElementById("threethree").setAttribute("readonly", true);
+                    document.getElementById("threefour").setAttribute("readonly", true);
+                    document.getElementById("threefive").setAttribute("readonly", true);
+                    document.getElementById("threesix").setAttribute("readonly", true);
+
+                    if (!navigator.onLine) {
+                        // alert('offline');
+                        //no network create offline db
+                        for (i = 0; i < 99999; i++) {
+                            if (localStorage.getItem(i)) {
+                               // alert('getitem  : ' + localStorage.getItem(i));
+                                continue;
+                            }
+                            //var value = localStorage.getItem(key); // Pass a key name to get its value.
+                            var value = jsonData2;
+                            //alert(i + ' : ' + value);
+                            var key = i;
+                            localStorage.setItem(key, value); // Pass a key name and its value to add or update that key.
+                            //localStorage.removeItem(key) // Pass a key name to remove that key from storage.
+                            break;
+                        }
+
+                        //alert("THE SCREENED HOUSEHOLD SCORE IS  " + score);
+                        localStorage.headcount = getmppiscore(headcount, 'mpi');
+                        // alert(localStorage.headcount);
+                        window.location.href = 'split.html';
+                        //Online Flow
+                    } else {
+                        $.ajax({
+                            type: "POST",
+                            url: url,
+                            data: dataString,
+                            crossDomain: true,
+                            cache: false,
+                            beforeSend: function () {
+                                //$("#counta").html('Loading Count...');
+                            },
+                            success: function (datay) {
+                                // alert(datay);
+                                localStorage.hhdbid = datay;
+                                //var dphhlinkid = myCount();
+                                //localStorage.hhlinkid = dphhlinkid;
+                                localStorage.headcount = getmppiscore(headcount, 'mpi');
+                                window.location.href = 'split.html';
+                            }
+                        });
+                        localStorage.headcount = getmppiscore(headcount, 'mpi');
+                    }
+                }
+            }
+
+            function processfivempi(score) {
+                if (score == '1') {
+                    return score;
+                } else if (score == '0') {
+                    var fiveone = document.getElementById("oneone").value;
+                    return fiveone;
+                }
+            }
+
+            function getmpiscore(tag, score) {
+                var no = (tag == 'seven') ? 0.125 : 0.041666667;
+                var act = parseInt(score) * no;
+                return act;
+            }
+
+            function getmppiscore(score, method) {
+                return score;
+            }
+
+            function processseven() {
+                var threeone = document.getElementById("threeone").value;
+                var threetwo = document.getElementById("threetwo").value;
+                var threethree = document.getElementById("threethree").value;
+                var threefour = document.getElementById("threefour").value;
+                var threefive = document.getElementById("threefive").value;
+                var threesix = document.getElementById("threesix").value;
+                var three = document.getElementById("three").value;
+
+                var retthreeone = (threeone == '1') ? 1 : 0;
+                var retthreentwo = (threetwo == '1') ? 1 : 0;
+                var retthreethree = (threethree == '1') ? 1 : 0;
+                var ret = parseInt(retthreeone) + parseInt(retthreentwo) + parseInt(retthreethree);
+                var retsevenfour = (threefour == '1') ? 1 : 0;
+                var retsevenfive = (threefive == '1') ? 1 : 0;
+                var retsevensix = (threesix == '1') ? 1 : 0;
+                //alert(ret+' ret');
+                var retmpi = parseInt(retsevenfour) + parseInt(retsevenfive) + parseInt(retsevensix) + ret;
+                //alert(retmpi+' retmpi');
+                //if retmpt = 1 then its deprived
+                return (three == '1' && retmpi >= 5) ? 1 : 0;
+            }
+
+            function getQuestMethod(no) {
+                var quest = {};
+                quest['one'] = 'PPI';
+                quest['two'] = 'PPI';
+                quest['three'] = 'PPI';
+                quest['four'] = 'PPI';
+                quest['five'] = 'MPI';
+                quest['fiveone'] = 'MPPI';
+                quest['six'] = 'MPPI';
+                quest['seven'] = 'MPPI';
+                quest['sevenone'] = 'MPPI';
+                quest['seventwo'] = 'MPPI';
+                quest['seventhree'] = 'MPPI';
+                quest['sevenfour'] = 'MPI';
+                quest['sevenfive'] = 'MPI';
+                quest['sevensix'] = 'MPI';
+                quest['eight'] = 'MPI';
+                quest['nine'] = 'MPI';
+                quest['ten'] = 'MPI';
+                quest['eleven'] = 'MPI';
+
+                return quest[no];
+            }
+
+            function showone(val) {
+                switch (val)
+                {
+                    case '1':
+                    {
+                        document.getElementById('oneonebox').style.display = "block";
+                        break;
+                    }
+                    case '0':
+                    {
+                        document.getElementById('oneonebox').style.display = "block";
+                        break;
+                    }
+                    case '':
+                    {
+                        document.getElementById('oneonebox').style.display = "none";
+                        break;
+                    }
+                }
+            }
+
+            function showthree(val) {
+                switch (val)
+                {
+                    case '0':
+                    {
+                        document.getElementById('threeonebox').style.display = "none";
+                        document.getElementById('threetwobox').style.display = "none";
+                        document.getElementById('threethreebox').style.display = "none";
+                        document.getElementById('threefourbox').style.display = "none";
+                        document.getElementById('threefivebox').style.display = "none";
+                        document.getElementById('threesixbox').style.display = "none";
+                        break;
+                    }
+                    case '1':
+                    {
+                        document.getElementById('threeonebox').style.display = "block";
+                        document.getElementById('threetwobox').style.display = "block";
+                        document.getElementById('threethreebox').style.display = "block";
+                        document.getElementById('threefourbox').style.display = "block";
+                        document.getElementById('threefivebox').style.display = "block";
+                        document.getElementById('threesixbox').style.display = "block";
+                        break;
+                    }
+                    case '':
+                    {
+                        document.getElementById('threeonebox').style.display = "none";
+                        document.getElementById('threetwobox').style.display = "none";
+                        document.getElementById('threethreebox').style.display = "none";
+                        document.getElementById('threefourbox').style.display = "none";
+                        document.getElementById('threefivebox').style.display = "none";
+                        document.getElementById('threesixbox').style.display = "none";
+                        break;
+                    }
+                }
+            }
+
+            function wait(ms)
+            {
+                var d = new Date();
+                var d2 = null;
+                do {
+                    d2 = new Date();
+                }
+                while (d2 - d < ms);
+            }
+
+            function myCount() {
+                var i = localStorage.sid;
+                var capsid = (i >= 26 ? ((i / 26 >> 0) - 1) : '') + 'abcdefghijklmnopqrstuvwxyz'[i % 26 >> 0];
+                //var capsid = (i >= 26 ? idOf((i / 26 >> 0) - 1) : '') + 'abcdefghijklmnopqrstuvwxyz'[i % 26 >> 0];
+                var d = new Date();
+                var n = capsid.toUpperCase() + '' + d.getSeconds() + '' + d.getMilliseconds();
+                return n;
+            }
+
+
+        </script>
+    </body>
+    <!-- Mirrored from html.alfisahr.com/maleo/signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Nov 2019 15:28:48 GMT -->
+
+</html>

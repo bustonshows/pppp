@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <!-- Mirrored from html.alfisahr.com/maleo/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Nov 2019 15:28:48 GMT -->
+
+    <head>
+        <title>PvTB - Multipurpose Mobile Template</title>
+        <meta charset="utf-8">
+        <meta content="IE=edge" http-equiv="x-ua-compatible">
+        <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/responsive.css">
+        <link rel="shortcut icon" href="images/favicon.png">
+        <script type="text/javascript">
+            var url = window.location.pathname;
+            var filename = url.substring(url.lastIndexOf('/') + 1);
+            if (localStorage.login == "true" && filename == 'index.html') {
+                window.location.href = "dash.html";
+            }
+            else if (localStorage.login == "false" && filename != 'index.html') {
+                window.location.href = "index.html";
+            }
+
+            document.addEventListener("offline", offNotifyy, false);
+            document.addEventListener("online", onSendy, false);
+            function offNotifyy() {
+                document.getElementById("small-dialog5").innerHTML = "Please Connect Internet To View";
+            }
+            function onSendy() {
+                document.getElementById("small-dialog5").innerHTML = '<iframe src="https://player.vimeo.com/video/57866624" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="main">
+            <div id="slide-out-left" class="side-nav">
+                <div class="side-cover">
+                    <div class="overlay"></div>
+                    <div class="cover-img"><img src="images/8.jpg" alt="" class=""></div>
+                    <div class="prof-container">
+
+                        <div class="profile-name" style="text-align:center; padding-bottom: 30px">Poverty-Tuberculosis Screening</div>
+                    </div>
+                </div>
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header"><i class="fa fa-home"></i>  <a href="index.html" style="color: black; font-weight: bold; text-decoration:none">Home</a> <span class="angle-right fa fa-angle-right"></span></div>
+
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="fa fa-info-circle"></i> <a style="color: black; font-weight: bold; text-decoration:none" href="about1.html" style="color: black;">About</a> <span class="angle-right fa fa-angle-right"></span></div>
+
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="fa fa-user-plus"></i> <a style="color: black; font-weight: bold; text-decoration:none" href="signup.html" style="color: black;">Create Account</a> <span class="angle-right fa fa-angle-right"></span></div>
+
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="fa fa-group"></i> <a style="color: black; font-weight: bold; text-decoration:none" href="#" style="color: black;">Add New Facility</a> <span class="angle-right fa fa-angle-right"></span></div>
+
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="fa fa-unlock-alt"></i> <a style="color: black; font-weight: bold; text-decoration:none" href="forgot.html" style="color: black;">Forgot Password</a> <span class="angle-right fa fa-angle-right"></span></div>
+
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="fa fa-user"></i> <a style="color: black; font-weight: bold; text-decoration:none" href="login.html" style="color: black;">Login</a> <span class="angle-right fa fa-angle-right"></span></div>
+
+                    </li>
+
+            </div>
+        </div>
+        <div id="page">
+            <div class="top-navbar">
+                <div class="top-navbar-left"><a href="#" id="menu-left" data-activates="slide-out-left"><i class="fa fa-bars"></i></a></div>
+                <div class="top-navbar-right"></div>
+                <div class="site-title">
+                    <img class="resize" src="images/logo.png"></div>
+            </div>
+            <div class="content-container">
+                <div class="maleo-card signup animated fadeInUp">
+                    <h3 class="maleo-card_title big-title text-center">Login</h3>
+                    <div class="form-content">
+                        <p class="app-desc">Please fill the form below with registered email & password for your access to the app.</p>
+                        <div class="input-field with-icon"><span class="icon"><i class="fa fa-envelope"></i></span>
+                            <input  type="email" id="email" type="text">
+                            <label for="email">email@domain.com</label>
+                        </div>
+                        <div class="input-field with-icon margin-bottom"><span class="icon"><i class="fa fa-lock"></i></span>
+                            <input id="password" type="password">
+                            <label for="password">Password</label>
+                        </div>
+                        <input  id="loc" type="hidden" name="loc" value=""/>
+                        <button class="btn-large block margin-bottom" type="button"  id="login">Login</button><span class="app-desc">Forgot Password? <a class="primary-text" href="forgot.html">Click Here</a></span></div>
+                </div>
+
+            </div>
+
+            <div class="footer">
+                <img src="images/logo.png"  class="resize" />
+                <p>PvTB - "Poverty-Tuberculosis Screening"</p>
+                <div class="social-footer"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a><a href="#" class="gplus"><i class="fa fa-google-plus"></i></a></div>
+                <div class="copyright">&copy; 2019 by PharmAccess</div>
+            </div>
+        </div>
+
+        <!--start-copyright
+        <div class="copy-right">
+            <p>Copyright &copy; 2017  All rights  Reserved</p>
+        </div>-->
+        
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+        <script type="text/javascript" src="js/slick.min.js"></script>
+        <script type="text/javascript" src="js/jquery.swipebox.min.js"></script>
+        <script type="text/javascript" src="js/custom.js"></script>
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        <!--<script type="text/javascript" src="js/jq.js"></script>-->
+        <script type="text/javascript" src="js/auth.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function () {
+            $('.customer-logos').slick({
+                slidesToShow: 6,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 1000,
+                arrows: false,
+                dots: false,
+                pauseOnHover: false,
+                responsive: [{
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 4
+                        }
+                    }, {
+                        breakpoint: 520,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    }]
+            });
+        });
+        </script>
+        <script>
+            if ($(window).height() > $("body").height()) {
+                $("footer").css("position", "fixed");
+            } else {
+                $("footer").css("position", "static");
+            }
+        </script>
+        <script>
+            var onSuccess = function (position) {
+                document.getElementById("loc").value = position.coords.longitude + ':' + position.coords.latitude;
+                localStorage.longlat = position.coords.longitude + ':' + position.coords.latitude;
+            };
+
+            function onError(error) {
+                alert('code: ' + error.code + '\n' +
+                        'message: ' + error.message + '\n');
+            }
+
+            navigator.geolocation.getCurrentPosition(onSuccess, onError);
+        </script>
+    </body>
+    <!-- Mirrored from html.alfisahr.com/maleo/login.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Nov 2019 15:28:48 GMT -->
+
+</html>

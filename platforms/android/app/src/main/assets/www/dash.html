@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <!-- Mirrored from html.alfisahr.com/maleo/drawer.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Nov 2019 15:28:43 GMT -->
+
+    <head>
+        <title>PvTB</title>
+        <meta charset="utf-8">
+        <meta content="IE=edge" http-equiv="x-ua-compatible">
+        <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/responsive.css">
+        <link rel="shortcut icon" href="images/favicon.png">
+        <script type="text/javascript">
+
+            if (localStorage.login != "true") {
+                window.location.href = "index.html";
+            }
+
+            var url = window.location.pathname;
+            var filename = url.substring(url.lastIndexOf('/') + 1);
+            if (localStorage.login == "true" && filename == 'login.html') {
+                window.location.href = "index.html";
+            }
+            else if (localStorage.login == "false" && filename != 'login.html') {
+                window.location.href = "login.html";
+            }
+
+            document.addEventListener("offline", offNotifyy, false);
+            document.addEventListener("online", onSendy, false);
+            function offNotifyy() {
+                document.getElementById("small-dialog5").innerHTML = "Please Connect Internet To View";
+            }
+            function onSendy() {
+                document.getElementById("small-dialog5").innerHTML = '<iframe src="https://player.vimeo.com/video/57866624" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+            }
+        </script>
+        <style>
+            .dashcolor{
+                color:#3F88C5;
+            }
+            .collapsible-header a {
+                color:#083D77 !important;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="main">
+            <div id="slide-out-left" class="side-nav">
+                <div class="side-cover">
+                    <div class="overlay"></div>
+                    <div class="cover-img"><img src="images/8.jpg" alt=""></div>
+                    <div class="prof-container">
+                        <div class="avatar" id="myImgg"></div>
+                        <div class="profile-name" id="nnam2" style="padding-bottom: 30px;float: inherit;padding-left: 80px;"></div>
+                    </div>
+                </div>
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header  current-item"><i class="fa fa-dashboard"></i> <a href="dash.html" style="text-decoration: none; color: inherit"> Dashboard </a> <span class="angle-right fa fa-angle-right"></span></div>
+
+                    </li>
+                   
+                    <li>
+                        <div class="collapsible-header current-item"><i class="fa fa-search-plus"></i> <a href="screen.html" style="text-decoration: none; color: inherit"> Screening </a> <span class="fa fa-angle-right"></span></div>
+
+                    </li>
+                    <li>
+                        <div style="font-weight: bold;" class="collapsible-header"><i class="fa fa-calendar-check-o"></i> <a href="task.html" style="text-decoration: none; color: inherit"> My Tasks </a> <span class="angle-right fa fa-angle-right"></span></div>
+                    </li>
+                    <li>
+                        <div  class="collapsible-header current-item"><i class="fa fa-envelope-o"></i><a href="pending.html" style="text-decoration: none; color: inherit">  Pending </a> <span class="angle-right fa fa-angle-right"></span></div>
+
+                    </li>
+                    <li>
+                        <div style="font-weight: bold;" class="collapsible-header"><i class="fa fa-unlock-alt"></i> <a href="change-password.html" style="text-decoration: none; color: inherit"> Password </a><span class="angle-right fa fa-angle-right"></span></div>
+
+                    </li>
+                    <li>
+                        <div class="collapsible-header current-item"><i class="fa fa-power-off"></i> <a style="text-decoration: none; color: inherit" id="logoutt" href="#logoutt">Logout</a> <span class="angle-right fa fa-angle-right"></span></div>
+
+                    </li>
+
+                    <li>
+                        <div class="line-separator"></div>
+                    </li>
+                    <li class="heading-menu">More On PvTB</li>
+                    <li><a href="about.html"><i class="fa fa-file"></i> About </a></li>
+                    <li><a href="contact.html"><i class="fa fa-map-pin"></i> Contact</a></li>
+                </ul>
+            </div>
+
+            <div id="page">
+                <div class="top-navbar">
+                    <div class="top-navbar-left"><a href="#" id="menu-left" data-activates="slide-out-left"><i class="fa fa-bars"></i></a></div>
+                    <div class="top-navbar-right"><a href="#" class="dropdown-button" data-activates="dropdown1"><i class="fa fa-ellipsis-v"></i></a>
+                        <ul id="dropdown1" class="dropdown-content">
+                            <li><a href="profile.html"><i class="fa fa-user"></i> My Profile</a></li>
+                            <li><a href="help.html"><i class="fa fa-question-circle"></i> Help</a></li>
+                            <li><a href="about.html"><i class="fa fa-file"></i> About</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#!"><i class="fa fa-cog"></i> Setting</a></li>
+                        </ul>
+                    </div>
+                    <div class="site-title">
+                        <div class="avatar"><img src="images/logo.png" alt="" class="resize"></div></div>
+                </div>
+                <!--.no-overlay class used for create element (in this case content-container) to be full height without overlayAnother class similar for this class is .full-overlay (with overlay of course).no-overlay / .full-overlay only can be used for content-container-->
+                <div class="content-container no-overlay">
+
+                    <!-- Different to the .no-overlay or .full-overlay class before,.full-height make an element to be full height, only stick for card (.maleo-card)Another is .full-height_alt class-->
+                    <div class="maleo-card full-height animated fadeIn">
+                        <div class="maleo-drawer">
+
+                            <div class="items">
+
+                                <ol class="drawer-icon">
+                                    <li style="width: 100%; margin-left: 0px;">
+                                        <div class="maleo-card maleo-event_list margin-bottom_low animated fadeInUp" style="border-radius: 20px 0 0 20px;">
+                                            <div class="event-date"><span class="month" id="month"></span><span class="date" id="date"></span><span class="year" id="year"></span></div>
+                                            <div class="event-content">
+                                                <div class="event-name"><a href="#">Welcome Back To PvTB!</a></div>
+                                                <div class="event-location"><i class="fa fa-user-md"></i> <span id="nnam" ></span></div>
+                                                <div class="event-location"><i class="fa fa-map-marker"></i> (<span id="nhos" ></span>) </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a style="text-decoration: none; color: inherit" href="screen.html">
+                                            <div class="icon dashcolor"><span class="fa fa-search-plus"></span></div>
+                                            <div class="name">Screening</div>
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a style="text-decoration: none; color: inherit" href="task.html">
+                                            <div class="icon dashcolor"><span class="fa fa-calendar-check-o"></span></div>
+                                            <div class="name">My Tasks</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a style="text-decoration: none; color: inherit" href="pending.html">
+                                            <div class="icon dashcolor"><span class="fa fa-envelope"></span></div>
+                                            <div class="name">Pending</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a style="text-decoration: none; color: inherit" href="change-password.html">
+                                            <div class="icon dashcolor"><span class="fa fa-unlock-alt"></span></div>
+                                            <div class="name">Password</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a style="text-decoration: none; color: inherit" href="about.html">
+                                            <div class="icon dashcolor"><span class="fa fa-file-o"></span></div>
+                                            <div class="name">About</div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a style="text-decoration: none; color: inherit" href="contact.html">
+                                            <div class="icon dashcolor"><span class="fa fa-map-pin"></span></div>
+                                            <div class="name">Contact</div>
+                                        </a>
+                                    </li>
+                                   
+                                    <li>
+                                        <a style="text-decoration: none; color: inherit" id="logouty" href="#logouty">
+                                            <div class="icon dashcolor"><span class="fa fa-sign-out"></span></div>
+                                            <div class="name">Logout</div>
+                                        </a>
+                                    </li>
+
+                                </ol>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <h2 class="heading">PvTB</h2>
+                    <p>Poverty-Tuberculosis Screening Tool</p>
+                    <div class="social-footer"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a><a href="#" class="gplus"><i class="fa fa-google-plus"></i></a></div>
+                    <div class="copyright">&copy; 2019 by PharmAccess</div>
+                </div>
+                <div id="to-top" class="main-bg"><i class="fa fa-chevron-up"></i></div>
+            </div>
+
+        </div>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+        <script type="text/javascript" src="js/slick.min.js"></script>
+        <script type="text/javascript" src="js/jquery.swipebox.min.js"></script>
+        <script type="text/javascript" src="js/custom.js"></script>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <!--<script type="text/javascript" src="js/jq.js"></script>-->
+        <script type="text/javascript" src="js/auth.js"></script>
+        <!-- CUSTOM SCRIPTS -->
+        <script src="js/custom.js"></script>
+        <script> document.getElementById("nnam").innerHTML = ' ' + localStorage.healthname.toUpperCase();</script>
+        <script> document.getElementById("nnam2").innerHTML = ' ' + localStorage.healthname;</script>
+        <script> document.getElementById("nhos").innerHTML = localStorage.facilityname;</script>
+        <script>
+
+            function loadprogpvtb() {
+                var url = "https://pvtb.com.ng/pharm/auth_new.php?callback=?";
+                var dataString2 = "alll=12&allpvtbprog=";
+                // alert(dataString2);
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: dataString2,
+                    crossDomain: true,
+                    cache: false,
+                    success: function (jsonnn) {
+                        //alert(jsonnn)
+                       //console.log(jsonnn)
+                        localStorage.jsonnn = jsonnn;
+                    }
+                });
+
+            }
+            if (navigator.onLine) {
+                loadprogpvtb();
+            }
+
+            var d = new Date();
+            var month = new Array();
+            month[0] = "Jan";
+            month[1] = "Feb";
+            month[2] = "Mar";
+            month[3] = "Apr";
+            month[4] = "May";
+            month[5] = "Jun";
+            month[6] = "Jul";
+            month[7] = "Au";
+            month[8] = "Sep";
+            month[9] = "Oct";
+            month[10] = "Nov";
+            month[11] = "Dec";
+            var n = month[d.getMonth()];
+            document.getElementById("year").innerHTML = d.getFullYear();
+            document.getElementById("month").innerHTML = month[d.getMonth()];
+            document.getElementById("date").innerHTML = d.getDate();
+
+        </script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('.customer-logos').slick({
+                    slidesToShow: 6,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 1000,
+                    arrows: false,
+                    dots: false,
+                    pauseOnHover: false,
+                    responsive: [{
+                            breakpoint: 768,
+                            settings: {
+                                slidesToShow: 4
+                            }
+                        }, {
+                            breakpoint: 520,
+                            settings: {
+                                slidesToShow: 3
+                            }
+                        }]
+                });
+            });
+        </script>
+        <script>
+            if ($(window).height() > $("body").height()) {
+                $("footer").css("position", "fixed");
+            } else {
+                $("footer").css("position", "static");
+            }
+
+            if ($.trim(localStorage.pix) != '') {
+                document.getElementById("myImgg").innerHTML = '<img onclick="openCamera()" id="myImg" class="img-circle border-effect" src="https://pvtb.com.ng/pharm/upload/' + localStorage.pix + '" alt=" ">';
+            }
+        </script>
+    </body>
+    <!-- Mirrored from html.alfisahr.com/maleo/drawer.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Nov 2019 15:28:43 GMT -->
+
+</html>

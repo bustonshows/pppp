@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <!-- Mirrored from html.alfisahr.com/maleo/signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Nov 2019 15:28:48 GMT -->
+
+    <head>
+        <title>PvTB - Poverty-Tuberculosis</title>
+        <meta charset="utf-8">
+        <meta content="IE=edge" http-equiv="x-ua-compatible">
+        <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="yes" name="apple-touch-fullscreen">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/responsive.css">
+        <link rel="shortcut icon" href="images/favicon.png">
+        <style>
+            select.browser-default{
+                color:#857070;
+                // font-size: 14px;
+                //font-weight: bold;
+            }
+            .margin-bottom_low{
+                padding-bottom: 20px;
+            }
+            .footer p{
+                margin: 0px;
+            }
+            .select2{
+                display: none;
+            }
+        </style>
+
+        <script type="text/javascript">
+
+            if (localStorage.login != "true") {
+                window.location.href = "index.html";
+            }
+
+            var url = window.location.pathname;
+            var filename = url.substring(url.lastIndexOf('/') + 1);
+            if (localStorage.login == "true" && filename == 'login.html') {
+                window.location.href = "index.html";
+            }
+            else if (localStorage.login == "false" && filename != 'login.html') {
+                window.location.href = "login.html";
+            }
+
+            document.addEventListener("offline", offNotifyy, false);
+            document.addEventListener("online", onSendy, false);
+            function offNotifyy() {
+                document.getElementById("small-dialog5").innerHTML = "Please Connect Internet To View";
+            }
+            function onSendy() {
+                document.getElementById("small-dialog5").innerHTML = '<iframe src="https://player.vimeo.com/video/57866624" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+            }
+        </script>
+        <script type="text/javascript">
+         
+            document.addEventListener('deviceready', deviceStart, false);
+            /********************************************************************/
+            function setOptions(srcType) {
+                var options = {
+                    // Some common settings are 20, 50, and 100
+                    quality: 50,
+                    destinationType: Camera.DestinationType.FILE_URI,
+                    // In this app, dynamically set the picture source, Camera or photo gallery
+                    sourceType: srcType,
+                    encodingType: Camera.EncodingType.JPEG,
+                    mediaType: Camera.MediaType.PICTURE,
+                    allowEdit: true,
+                    correctOrientation: true  //Corrects Android orientation quirks
+                }
+                return options;
+            }
+
+            function openCamera() {
+
+                var srcType = Camera.PictureSourceType.CAMERA;
+                var options = setOptions(srcType);
+                        //var func = getFileEntry;
+
+                navigator.camera.getPicture(function cameraSuccess(imageUri) {
+               // alert('yes');
+                    displayImage(imageUri);
+                  // alert('no');
+                    // You may choose to copy the picture, save it somewhere, or upload.
+                    getFileEntry(imageUri);
+                  //alert('noyes');
+
+                }, function cameraError(error) {
+                    alert("Unable to obtain picture: " + error, "app");
+
+                }, options);
+            }
+
+            function displayImage(imgUri) {
+
+                var elem = document.getElementById('myImgi');
+                elem.src = imgUri;
+            }
+
+
+            function createNewFileEntry(imgUri) {
+                window.resolveLocalFileSystemURL(cordova.file.cacheDirectory, function success(dirEntry) {
+                    imageup(imgUri);
+                    // JPEG file
+                    dirEntry.getFile("tempFile.jpeg", {create: true, exclusive: false}, function (fileEntry) {
+
+                        // Do something with it, like write to it, upload it, etc.
+                        // writeFile(fileEntry, imgUri);
+                        alert("got file: " + fileEntry.fullPath);
+                        // displayFileData(fileEntry.fullPath, "File copied to");
+
+                    }, onErrorCreateFile);
+
+                }, onErrorResolveUrl);
+            }
+            function getFileEntry(imgUri) {
+                window.resolveLocalFileSystemURL(imgUri, function success(fileEntry) {
+
+                    // Do something with the FileEntry object, like write to it, upload it, etc.
+                    // writeFile(fileEntry, imgUri);
+                    console.log("got file: " + fileEntry.fullPath);
+                    // displayFileData(fileEntry.nativeURL, "Native URL");
+                    imageup(imgUri);
+                }, function () {
+                    // If don't get the FileEntry (which may happen when testing
+                    // on some emulators), copy to a new FileEntry.
+                    createNewFileEntry(imgUri);
+                });
+            }
+
+
+            function imageup(fileURL) {
+                //alert('up');
+                var win = function (r) {
+                    //alert('win');
+                    //alert("Code = " + r.responseCode);
+                    //alert("Response = " + r.response);
+                    //alert("Sent = " + r.bytesSent);
+                    alert("Community Landmark Uploaded");
+                    //document.getElementById("passport").value = r.response;
+                }
+
+                var fail = function (error) {
+                    //alert('fail');
+                  alert("An error has occurred: Code = " + error.code);
+                   // alert("upload error source " + error.source);
+                   // alert("upload error target " + error.target);
+                }
+
+                var options = new FileUploadOptions();
+                options.fileKey = "file";
+                options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
+                //alert(options.fileName);
+                document.getElementById("passport").value = options.fileName;
+                options.mimeType = "image/jpeg";
+
+                var params = {};
+                params.sid = 0;
+                params.section = "assessor";
+
+                options.params = params;
+
+                var ft = new FileTransfer();
+                ft.upload(fileURL, encodeURI("https://pvtb.com.ng/pharm/upload.php"), win, fail, options);
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <div id="main">
+            <div id="slide-out-left" class="side-nav">
+                <div class="side-cover">
+                    <div class="overlay"></div>
+                    <div class="cover-img"><img src="images/8.jpg" alt=""></div>
+                    <div class="prof-container">
+                        <div class="avatar" id="myImgg"></div>
+                        <div class="profile-name" id="nnam2" style="padding-bottom: 30px;float: inherit;padding-left: 80px;"></div>
+                    </div>
+                </div>
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li>
+                        <div class="collapsible-header  current-item"><i class="fa fa-dashboard"></i> <a href="dash.html" style="text-decoration: none; color: inherit"> Dashboard </a> <span class="angle-right fa fa-angle-right"></span></div>
+
+                    </li>
+                   
+                    <li>
+                        <div class="collapsible-header current-item"><i class="fa fa-search-plus"></i> <a href="screen.html" style="text-decoration: none; color: inherit"> Screening </a> <span class="fa fa-angle-right"></span></div>
+
+                    </li>
+                    <li>
+                        <div style="font-weight: bold;" class="collapsible-header"><i class="fa fa-calendar-check-o"></i> <a href="task.html" style="text-decoration: none; color: inherit"> My Tasks </a> <span class="angle-right fa fa-angle-right"></span></div>
+                    </li>
+                    <li>
+                        <div  class="collapsible-header current-item"><i class="fa fa-envelope-o"></i><a href="pending.html" style="text-decoration: none; color: inherit">  Pending </a> <span class="angle-right fa fa-angle-right"></span></div>
+
+                    </li>
+                    <li>
+                        <div style="font-weight: bold;" class="collapsible-header"><i class="fa fa-unlock-alt"></i> <a href="change-password.html" style="text-decoration: none; color: inherit"> Password </a><span class="angle-right fa fa-angle-right"></span></div>
+
+                    </li>
+                    <li>
+                        <div class="collapsible-header current-item"><i class="fa fa-power-off"></i> <a style="text-decoration: none; color: inherit" id="logoutt" href="#logoutt">Logout</a> <span class="angle-right fa fa-angle-right"></span></div>
+
+                    </li>
+
+                    <li>
+                        <div class="line-separator"></div>
+                    </li>
+                    <li class="heading-menu">More On PvTB</li>
+                    <li><a href="about.html"><i class="fa fa-file"></i> About </a></li>
+                    <li><a href="contact.html"><i class="fa fa-map-pin"></i> Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="page">
+            <div class="top-navbar">
+                <div class="top-navbar-left"><a href="#" id="menu-left" data-activates="slide-out-left"><i class="fa fa-bars"></i></a></div>
+                <div class="top-navbar-right"></div>
+                <div class="site-title">
+                    <img class="resize" src="images/logo.png"></div>
+            </div>
+            <div class="content-container">
+                <div class="maleo-card signup animated fadeInUp">
+                    <h3 class="maleo-card_title big-title text-center">Pre-Screening</h3>
+                    <div class="form-content">
+                        <p class="app-desc">Please fill the fields.</p>
+                        <div class="input-field with-icon margin-bottom">
+                         <input type="hidden" name="passport" id="passport" value=""/>
+                            <span class="wrap-input100 validate-input bg1"  style="color:white" data-validate="Choose Passport">
+                            <span class="label-input100" style="color:black; font-weight: bold;">Community Landmark Upload*</span>
+                            <br/>
+                            
+                            <a style="margin-bottom:40px;background-color:#d8334a !important;color:#fff;display: inline" class="bg-highlight" onclick="openCamera()"><strong>Click Here To Upload</strong></a>
+                            <img style="margin-left: 20px"  id="myImgi" src="images/landmark.jpg" width="98" height="98">
+                        </span>
+                        </div>
+                        <div class="input-field with-icon margin-bottom">
+                            <div class="margin-bottom_low"><span class="icon" style="float:left;top: -5px"><i class="fa fa-map-marker"></i></span><span style="padding-left: 25px; float:left; font-size: 1rem; color: #9e9e9e;">State</span></div>
+                            <select class="browser-default" id="state" style="font-size: 1rem;">
+                                <option value="" selected="selected" >- Select -</option>
+                            </select>
+                        </div>
+                        <div class="input-field with-icon margin-bottom">
+                            <div class="margin-bottom_low"><span class="icon" style="float:left;top: -5px"><i class="fa fa-street-view"></i></span><span style="padding-left: 25px; float:left; font-size: 1rem; color: #9e9e9e;">LGA</span></div>
+                            <select name="lga" id="lga" class="browser-default"  onchange="wards()">
+                            </select>
+                        </div>
+                        <div class="input-field with-icon margin-bottom">
+                            <div class="margin-bottom_low"><span class="icon" style="float:left;top: -5px"><i class="fa fa-home"></i></span><span style="padding-left: 25px; float:left; font-size: 1rem; color: #9e9e9e;">Ward</span></div>
+                            <span id="faccc">
+                                <select  name="ward" id="ward"  class="browser-default"></select>
+                            </span>
+                        </div>
+
+                        <div class="input-field with-icon margin-bottom"><span class="icon"><i class="fa fa-group"></i></span>
+                            <input id="comm" type="text">
+                            <input id="loc" type="hidden">
+                            <label for="comm">Community</label>
+                        </div>
+                        
+                        <button class="btn-large block margin-bottom" type="button" id="prescreen">Start Screening</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <img src="images/logo.png"  class="resize" />
+            <p>PvTB - "Poverty-Tuberculosis Screening"</p>
+            <div class="social-footer"><a href="#" class="facebook"><i class="fa fa-facebook"></i></a><a href="#" class="twitter"><i class="fa fa-twitter"></i></a><a href="#" class="gplus"><i class="fa fa-google-plus"></i></a></div>
+            <div class="copyright">&copy; 2019 by PharmAccess</div>
+        </div>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript"  src="js/select2.min.js"></script>
+        <script type="text/javascript"  src="js/lga.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+        <script type="text/javascript" src="js/slick.min.js"></script>
+        <script type="text/javascript" src="js/jquery.swipebox.min.js"></script>
+        <script type="text/javascript" src="js/custom.js"></script>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <!--<script type="text/javascript" src="js/jq.js"></script>-->
+        <script type="text/javascript" src="js/auth.js"></script>
+        
+        <script> document.getElementById("nnam").innerHTML = ' ' + localStorage.healthname.toUpperCase();</script>
+        <script> document.getElementById("nnam2").innerHTML = ' ' + localStorage.healthname;</script>
+        <script> document.getElementById("nhos").innerHTML = localStorage.facilityname;</script>
+        <script type="text/javascript">
+                                $(document).ready(function () {
+                                    $('.customer-logos').slick({
+                                        slidesToShow: 6,
+                                        slidesToScroll: 1,
+                                        autoplay: true,
+                                        autoplaySpeed: 1000,
+                                        arrows: false,
+                                        dots: false,
+                                        pauseOnHover: false,
+                                        responsive: [{
+                                                breakpoint: 768,
+                                                settings: {
+                                                    slidesToShow: 4
+                                                }
+                                            }, {
+                                                breakpoint: 520,
+                                                settings: {
+                                                    slidesToShow: 3
+                                                }
+                                            }]
+                                    });
+                                });
+        </script>
+           <script>
+            if ($(window).height() > $("body").height()) {
+                $("footer").css("position", "fixed");
+            } else {
+                $("footer").css("position", "static");
+            }
+
+            if ($.trim(localStorage.pix) != '') {
+                document.getElementById("myImgg").innerHTML = '<img onclick="openCamera()" id="myImg" class="img-circle border-effect" src="https://pvtb.com.ng/pharm/upload/' + localStorage.pix + '" alt=" ">';
+            }
+
+            $.ajax({
+                url: "https://geoip-db.com/jsonp",
+                jsonpCallback: "callback",
+                dataType: "jsonp",
+                success: function (location) {
+                    var x = document.getElementById("state");
+                    var option = document.createElement("option");
+                    option.text = (location.state == null) ? 'Lagos' : 'Lagos';
+                    x.add(option);
+                }
+            });
+
+            // Screening Geolocation
+            var onSuccess = function (position) {
+                document.getElementById("loc").value = position.coords.longitude + ':' + position.coords.latitude;
+                localStorage.screenlonglat = position.coords.longitude + ':' + position.coords.latitude;
+            };
+
+            function onError(error) {
+                if (localStorage.screenlonglat) {
+                    document.getElementById("loc").value = localStorage.screenlonglat;
+                } else {
+                    document.getElementById("loc").value = localStorage.longlat;
+                    localStorage.screenlonglat = localStorage.longlat;
+                    //alert('code: ' + error.code + '\n' +
+                    //       'message: ' + error.message + '\n');
+                    //}
+                }
+            }
+            navigator.geolocation.getCurrentPosition(onSuccess, onError);
+
+
+            //signup function
+            $("#prescreen").click(function () {
+                var state = $("#state").val();
+                var lga = $("#lga").val();
+                var ward = $("#ward").val();
+                var comm = $("#comm").val();
+                var pass = $("#passport").val();
+                //var dataString = "phone=" + phone + "&fullname=" + fullname + "&address=" + address + "&type=" + type + "&email=" + email + "&state=" + state + "&lga=" + lga + "&facility=" + facility + "&password=" + password + "&gender=" + gender + "&signup=";
+                if ($.trim(state) == '') {
+                    alert("Check State Field");
+                    return false;
+                } else if ($.trim(lga) == '') {
+                    alert("Check LGA Field");
+                    return false;
+                } else if ($.trim(ward) == '') {
+                    alert("Check Ward Field");
+                    return false;
+                } else if ($.trim(comm) == '') {
+                    alert("Check Community Field");
+                    return false;
+                }else if ($.trim(pass) == '') {
+                    alert("Upload The Community Landmark");
+                    return false;
+                }
+
+                if ($.trim(state).length > 0 & $.trim(lga).length > 0 & $.trim(ward).length > 0 & $.trim(comm).length > 0)
+                {
+                  
+                    localStorage.screenstate = state;
+                    localStorage.screenlga = lga;
+                    localStorage.screenward = ward;
+                    localStorage.screencomm = comm;
+                    localStorage.commpass = pass;
+                    localStorage.screenlonglat;
+                    window.location.href = "pmt.html";
+                } else {
+                    alert('Fields are not filled correctly');
+                }
+                return false;
+
+            });
+
+            function facs() {
+                var url = "https://pvtb.com.ng/pharm/auth_new.php?callback=?";
+                var state = $("#state").val();
+                var lga = $("#lga").val();
+                var dataString = "lga=" + lga + "&state=" + state + "&lgaloadd=";
+
+                if ($.trim(state) == '') {
+                    alert("Please Select State");
+                    return false;
+                } else if ($.trim(lga) == '') {
+                    alert("Please Select LGA");
+                    return false;
+                }
+
+                if ($.trim(state).length > 0 & $.trim(lga).length > 0)
+                {
+                    $.ajax({
+                        type: "POST",
+                        url: url,
+                        data: dataString,
+                        crossDomain: true,
+                        cache: false,
+                        beforeSend: function () {
+                            $("#faccc").html('<button class="button button-block button-positive">Loading Available Facilities...</button>');
+                        },
+                        success: function (datay) {
+                            //alert(datay);
+                            var dp = datay;
+                            //document.getElementById("faccc").innerHTML = dp;
+                            $("#faccc").html(dp);
+                        }
+                    });
+                }
+                return false;
+            }
+            
+            function wards() {
+                var url = "https://pvtb.com.ng/pharm/auth_new.php?callback=?";
+                var state = $("#state").val();
+                var lga = $("#lga").val();
+                var dataString = "lga=" + lga + "&state=" + state + "&wardload=";
+
+                if ($.trim(state) == '') {
+                    alert("Please Select State");
+                    return false;
+                } else if ($.trim(lga) == '') {
+                    alert("Please Select LGA");
+                    return false;
+                }
+
+                if ($.trim(state).length > 0 & $.trim(lga).length > 0)
+                {
+                    $.ajax({
+                        type: "POST",
+                        url: url,
+                        data: dataString,
+                        crossDomain: true,
+                        cache: false,
+                        beforeSend: function () {
+                            $("#faccc").html('<button class="button button-block button-positive">Loading Available Wards...</button>');
+                        },
+                        success: function (datay) {
+                            //alert(datay);
+                            var dp = datay;
+                            //document.getElementById("faccc").innerHTML = dp;
+                            $("#faccc").html(dp);
+                        }
+                    });
+                }
+                return false;
+            }
+
+        </script>
+    </body>
+    <!-- Mirrored from html.alfisahr.com/maleo/signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Nov 2019 15:28:48 GMT -->
+
+</html>
